@@ -8,7 +8,7 @@ Este Repositório consiste em um amontoado de resoluções de problemas escritas
 ---
 #### Objetivo
 
-A construção destes algoritmos tem por objetivo treinar a lógica de programação e também conhecer a cada dia mais a linguagem JavaScript.
+A construção destes algoritmos tem por objetivo treinar a lógica de programação e também conhecer a cada dia mais a linguagem JavaScript e C#.
 
 ---
 
