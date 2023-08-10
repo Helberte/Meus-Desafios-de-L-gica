@@ -129,25 +129,60 @@ public class Exercicios
     {
         int[,] D;
         int    linha  = 0,  coluna = 0;
-        string valor1 = "", valor2 = "";
-        int    valorMaximo;               
+        string valor1 = "", valor2 = "", valor3 = "";
+        int    valorMaximo;
+        bool   continuar = false;
 
         do
         {
-            Console.WriteLine("Informe a quantidade de linhas: ");
-            valor1 = Console.ReadLine() ?? "N/A";
-        } 
-        while (!CheckNumero(valor1));
+            Console.Clear();
 
-        do
-        {
-            Console.WriteLine("Informe a quantidade de colunas: ");
-            valor2 = Console.ReadLine() ?? "N/A";
-        } 
-        while (!CheckNumero(valor2));
+            try
+            {
+                do
+                {
+                    Console.WriteLine("Informe a quantidade de linhas: ");
+                    valor1 = Console.ReadLine() ?? "N/A";
+                }
+                while (!CheckNumero(valor1));
 
-        linha  = Convert.ToInt32(valor1);
-        coluna = Convert.ToInt32(valor2);             
+                do
+                {
+                    Console.WriteLine("Informe a quantidade de colunas: ");
+                    valor2 = Console.ReadLine() ?? "N/A";
+                }
+                while (!CheckNumero(valor2));
+
+                do
+                {
+                    Console.WriteLine("Informe um valor máximo para elementos aleatorios: ");
+                    valor3 = Console.ReadLine() ?? "N/A";
+                }
+                while (!CheckNumero(valor3));
+
+                linha       = Convert.ToInt32(valor1);
+                coluna      = Convert.ToInt32(valor2);
+                valorMaximo = Convert.ToInt32(valor3);
+
+                D = new int[linha, coluna];
+
+                for (int i = 0; i < linha; i++)
+                    Console.WriteLine(string.Join("-", Enumerable.Range(0, coluna).Select(colum => D[i, colum] = new Random().Next(valorMaximo))));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro: {ex.Message}");
+            }
+            
+            Console.WriteLine("\n\nDeseja criar outra matriz? (true) or (false)");
+            continuar = Convert.ToBoolean(Console.ReadLine());
+        } 
+        while (continuar);        
+    }
+
+    public void Questao05()
+    {
+
     }
 
     /// <summary>
