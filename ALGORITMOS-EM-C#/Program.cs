@@ -1,12 +1,11 @@
 ﻿
 
 
+#region Exercicios
+
 Exercicios exercicios = new();
 
-
-exercicios.Questao04();
-
-
+//exercicios.Questao04();
 
 public class Exercicios
 {
@@ -74,7 +73,7 @@ public class Exercicios
         }
         Console.WriteLine(auxiliar);
         Console.WriteLine("INVERTIDA\n");
-       
+
         for (int linha = 5; linha >= 0; linha--)
         {
             string auxiliar = "";
@@ -128,10 +127,10 @@ public class Exercicios
     public void Questao04()
     {
         int[,] D;
-        int    linha  = 0,  coluna = 0;
+        int linha = 0, coluna = 0;
         string valor1 = "", valor2 = "", valor3 = "";
-        int    valorMaximo;
-        bool   continuar = false;
+        int valorMaximo;
+        bool continuar = false;
 
         do
         {
@@ -173,16 +172,53 @@ public class Exercicios
             {
                 Console.WriteLine($"Erro: {ex.Message}");
             }
-            
+
             Console.WriteLine("\n\nDeseja criar outra matriz? (true) or (false)");
             continuar = Convert.ToBoolean(Console.ReadLine());
-        } 
-        while (continuar);        
+        }
+        while (continuar);
     }
 
+    /// <summary>
+    /// Escreva um programa para ler 2 matrizes N x M (definido pelo usuário) 
+    /// e calcular a soma entre elas gerando uma terceira matriz.
+    /// </summary>
     public void Questao05()
     {
+        int[,] A;
+        string valor1 = "", valor2 = "", valor3 = "";
+        int    linha, coluna, valorMaximo;
 
+        do
+        {
+            Console.WriteLine("Informe a quantidade de linhas: ");
+            valor1 = Console.ReadLine() ?? "N/A";
+        }
+        while (!CheckNumero(valor1));
+
+        do
+        {
+            Console.WriteLine("Informe a quantidade de colunas: ");
+            valor2 = Console.ReadLine() ?? "N/A";
+        }
+        while (!CheckNumero(valor2));
+
+        do
+        {
+            Console.WriteLine("Informe um valor máximo para elementos aleatorios: ");
+            valor3 = Console.ReadLine() ?? "N/A";
+        }
+        while (!CheckNumero(valor3));
+
+        linha       = Convert.ToInt32(valor1);
+        coluna      = Convert.ToInt32(valor2);
+        valorMaximo = Convert.ToInt32(valor3);
+
+        A = new int[linha, coluna];
+
+        for (int i = 0; i < linha; i++)        
+            Enumerable.Range(0, coluna).Select(col => A[i, col] = new Random().Next(valorMaximo));
+               
     }
 
     /// <summary>
@@ -202,11 +238,11 @@ public class Exercicios
     /// de números inteiros dentro de um determinado intervalo
     /// </summary>
     public void ComoUsarRange()
-    {      
+    {
         IEnumerable<int> numeros = Enumerable.Range(1, 100);
 
         foreach (int item in numeros)
-            Console.WriteLine(item);     
+            Console.WriteLine(item);
     }
 
     /// <summary>
@@ -217,7 +253,7 @@ public class Exercicios
     public void ComoUsarSelect()
     {
         IEnumerable<decimal> numeros = new decimal[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
-        IEnumerable<decimal> teste   = numeros.Select(num =>  num* num);
+        IEnumerable<decimal> teste = numeros.Select(num => num * num);
 
         /* Ele é usado para transformar os elementos de uma sequência, aplicando 
         uma operação ou uma função a cada elemento e retornando uma nova sequência 
@@ -248,4 +284,46 @@ public class Exercicios
         catch (Exception) { return false; }
     }
 }
+
+#endregion
+
+#region Evitando Ifs
+
+//IPagamento boleto        = new Boleto(new DateTime(2023,8,12));
+//IPagamento cartaoCredito = new CartaoCredito();
+
+//Console.WriteLine($"Cartão de crédito: {cartaoCredito.PodeSerPago()}");
+//Console.WriteLine($"Boleto: {boleto.PodeSerPago()}");
+
+public class Boleto : IPagamento
+{ 
+    public DateTime DataVencimento { get; private set; }
+
+    public Boleto(DateTime vencimento)
+    {
+        this.DataVencimento = vencimento;
+    }
+
+    public bool PodeSerPago()
+    {
+        if ((this.DataVencimento.DayOfWeek == DayOfWeek.Saturday) || (this.DataVencimento.DayOfWeek == DayOfWeek.Sunday))
+            return false;
+        return true;
+    }
+}
+ 
+public class CartaoCredito : IPagamento
+{
+    public bool PodeSerPago()
+    {
+        return true;
+    }
+}
+
+interface IPagamento
+{
+    public bool PodeSerPago();
+}
+
+#endregion
 
