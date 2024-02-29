@@ -1,0 +1,15 @@
+D:\Helberte\Meus-Desafios-de-Logica\Canguru\bin\Debug\net8.0\Canguru.exe
+D:\Helberte\Meus-Desafios-de-Logica\Canguru\bin\Debug\net8.0\Canguru.deps.json
+D:\Helberte\Meus-Desafios-de-Logica\Canguru\bin\Debug\net8.0\Canguru.runtimeconfig.json
+D:\Helberte\Meus-Desafios-de-Logica\Canguru\bin\Debug\net8.0\Canguru.dll
+D:\Helberte\Meus-Desafios-de-Logica\Canguru\bin\Debug\net8.0\Canguru.pdb
+D:\Helberte\Meus-Desafios-de-Logica\Canguru\obj\Debug\net8.0\Canguru.GeneratedMSBuildEditorConfig.editorconfig
+D:\Helberte\Meus-Desafios-de-Logica\Canguru\obj\Debug\net8.0\Canguru.AssemblyInfoInputs.cache
+D:\Helberte\Meus-Desafios-de-Logica\Canguru\obj\Debug\net8.0\Canguru.AssemblyInfo.cs
+D:\Helberte\Meus-Desafios-de-Logica\Canguru\obj\Debug\net8.0\Canguru.csproj.CoreCompileInputs.cache
+D:\Helberte\Meus-Desafios-de-Logica\Canguru\obj\Debug\net8.0\Canguru.sourcelink.json
+D:\Helberte\Meus-Desafios-de-Logica\Canguru\obj\Debug\net8.0\Canguru.dll
+D:\Helberte\Meus-Desafios-de-Logica\Canguru\obj\Debug\net8.0\refint\Canguru.dll
+D:\Helberte\Meus-Desafios-de-Logica\Canguru\obj\Debug\net8.0\Canguru.pdb
+D:\Helberte\Meus-Desafios-de-Logica\Canguru\obj\Debug\net8.0\Canguru.genruntimeconfig.cache
+D:\Helberte\Meus-Desafios-de-Logica\Canguru\obj\Debug\net8.0\ref\Canguru.dll
